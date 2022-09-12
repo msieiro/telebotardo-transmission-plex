@@ -2,23 +2,30 @@ version: '3.7'
 
 services:
   transmission:
+    image: lscr.io/linuxserver/transmission:latest
     container_name: transmission
-    image: jaymoulin/transmission:latest
-    command: transmission-daemon -f -g /config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Madrid
+      - TRANSMISSION_WEB_HOME=/combustion-release/
+      - USER=admin
+      - PASS=admin
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    expose:
+      - 9091
     volumes:
       - /mnt/storage/transmission/config:/config
+      - /mnt/storage/incomplete-downloads:/downloads
       - /mnt/storage/downloads:/downloads/complete
-    environment:
-      - WEB_PASSWD=admin
-      - TRANSMISSION_USER=admin
-      - TRANSMISSION_PASSWORD=admin
-    hostname: 'transmission'
     restart: unless-stopped
-    network_mode: 'host'
 
   telebotardo-transmission:
     build:
-      context: .
+      context:
     restart: unless-stopped
     network_mode: 'host'
     depends_on:
