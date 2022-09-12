@@ -25,7 +25,7 @@ services:
 
   telebotardo-transmission:
     build:
-      context:
+      context: .
     restart: unless-stopped
     network_mode: 'host'
     depends_on:
