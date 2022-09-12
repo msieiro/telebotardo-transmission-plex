@@ -8,8 +8,26 @@
   "devDependencies": {
     "@types/node-telegram-bot-api": "0.57.1"
   },
+  "homepage": "https://github.com/msieiro/telebotardo-transmission-plex",
+  "keywords": [
+    "Transmission",
+    "Transmission Client",
+    "Torrent",
+    "Telegram Bot",
+    "Telegram Bot API",
+    "Telegram",
+    "Plex Media Server",
+    "Plex",
+    "Raspberry Pi",
+    "Docker",
+    "JavaScript"
+  ],
   "main": "main.js",
   "name": "telebotardo-transmission-plex",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msieiro/telebotardo-transmission-plex.git"
+  },
   "scripts": {
     "start": "node main.js"
   },
