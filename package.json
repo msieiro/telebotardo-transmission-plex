@@ -1,0 +1,17 @@
+{
+  "author": "Martín Sieiro Gutiérrez",
+  "dependencies": {
+    "node-telegram-bot-api": "0.59.0",
+    "transmission": "0.4.10"
+  },
+  "description": "Telegram Bot API + Transmission + Plex Media Server",
+  "devDependencies": {
+    "@types/node-telegram-bot-api": "0.57.1"
+  },
+  "main": "main.js",
+  "name": "telebotardo-transmission-plex",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "version": "0.0.1"
+}
