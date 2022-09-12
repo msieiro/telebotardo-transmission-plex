@@ -1,11 +1,15 @@
+require('dotenv').config()
+
 const TelegramBot = require('node-telegram-bot-api')
 const Transmission = require('transmission')
-const token = ''
+
+const token = process.env.API_TOKEN || ''
+
 const transmission = new Transmission({
-    port: 9091,
-    host: "",
-    username: 'username',
-    password: 'password'
+    port: process.env.TRANSMISSION_PORT || "",
+    host: process.env.TRANSMISSION_HOST || "",
+    username: 'admin',
+    password: 'admin'
 })
 const bot = new TelegramBot(token, { polling: true, interval: 2000 })
 
@@ -15,10 +19,10 @@ function getTransmissionInstance() {
         console.info("Starting transmission instance")
         if (transmission) return transmission
         else return new Transmission({
-            port: 9091,
-            host: "",
-            username: 'username',
-            password: 'password'
+            port: process.env.TRANSMISSION_PORT || "",
+            host: process.env.TRANSMISSION_HOST || "",
+            username: 'admin',
+            password: 'admin'
         })
     } catch (_) {
         console.error("Error creating transmission instance")
@@ -34,5 +38,6 @@ function getBotInstance() {
         console.error("Error creating bot instance")
     }
 }
+
 
 module.exports = { getTransmissionInstance, getBotInstance }
