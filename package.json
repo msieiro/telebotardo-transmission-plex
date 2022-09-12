@@ -6,8 +6,10 @@
   },
   "description": "Telegram Bot API + Transmission + Plex Media Server",
   "devDependencies": {
-    "@types/node-telegram-bot-api": "0.57.1"
+    "@types/node-telegram-bot-api": "0.57.1",
+    "dotenv": "16.0.2"
   },
+  "type": "commonjs",
   "homepage": "https://github.com/msieiro/telebotardo-transmission-plex",
   "keywords": [
     "Transmission",
