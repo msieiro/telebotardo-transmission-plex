@@ -8,12 +8,6 @@ services:
     volumes:
       - /mnt/storage/transmission/config:/config
       - /mnt/storage/downloads:/downloads/complete
-    ports:
-      - 9091:9091
-      - 51413:51413
-      - 51413:51413/udp
-    expose:
-      - 9091
     environment:
       - WEB_PASSWD=admin
       - TRANSMISSION_USER=admin
@@ -32,11 +26,6 @@ services:
 
   plex:
     image: jaymoulin/plex:latest
-    ports:
-      - 32400:32400
-      - 33400:33400
-    expose:
-      - 32400
     volumes:
       - /mnt/storage/tmp:/tmp
       - /mnt/storage/downloads:/media
