@@ -1,7 +1,7 @@
 {
   "author": "Martín Sieiro Gutiérrez",
   "dependencies": {
-    "node-telegram-bot-api": "0.59.0",
+    "node-telegram-bot-api": "0.67.0",
     "transmission": "0.4.10"
   },
   "description": "Telegram Bot API + Transmission + Plex Media Server",
